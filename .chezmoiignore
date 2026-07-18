@@ -1,0 +1,4 @@
+{{- if and (ne .chezmoi.os "darwin") (ne .chezmoi.os "linux") }}
+.zshrc
+.p10k.zsh
+{{- end }}
