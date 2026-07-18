@@ -1,16 +1,20 @@
-Host git.alessiosarica.it
-	HostName gitlab.com
-	User git
-	IdentityOnly
-
-Host git.unidea.org
-	HostName gitlab.com
-	user git
-	IdentityOnly
-
 Host *
 {{ if eq .chezmoi.os "linux" }}
 	IdentityAgent ~/.1password/agent.sock
 {{ else }}
-	IdentityAgent ~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock
+	IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 {{ end }}
+
+Host git.alessiosarica.it
+	HostName gitlab.com
+	User git
+	IdentityFile ~/.ssh/git.alessiosarica.it.pub
+	IdentitiesOnly yes
+	PubkeyAuthentication yes
+
+Host git.unidea.org
+	HostName gitlab.com
+	user git
+	IdentityFile ~/.ssh/git.unidea.org.pub
+	IdentitiesOnly yes
+	PubkeyAuthentication yes
