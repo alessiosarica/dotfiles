@@ -1,0 +1,19 @@
+[user]
+	name = Alessio Sarica
+	email = 255438546+alessiosarica@users.noreply.github.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINLN3edyKrBV6n4rKknwXTfHvNmu23gHdiob5NlpKeAb
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+
+[includeIf "gitdir:~/Developer/UNIDEA/"]
+	path = ~/.gitconfig.unidea
+[gpg "ssh"]
+{{ if eq .chezmoi.os "linux" }}
+	program = "/opt/1Password/op-ssh-sign"
+{{ else }}
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+{{ end }}
