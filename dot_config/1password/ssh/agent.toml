@@ -1,4 +1,7 @@
 [[ssh-keys]]
+vault = "Personal"
+
+[[ssh-keys]]
 vault = "Personale"
 
 [[ssh-keys]]
