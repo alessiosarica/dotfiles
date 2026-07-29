@@ -114,7 +114,17 @@ fi
 alias ls='ls --color'
 alias vim='nvim'
 alias c='clear'
+
+if command -v pnpm >/dev/null 2>&1; then
+	export PNPM_HOME="/Users/a.sarica/Library/pnpm"
+	case ":$PATH:" in
+	  *":$PNPM_HOME/bin:"*) ;;
+	  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+	esac
+fi
 {{- end }}
+
+export PATH="$PATH:/Users/a.sarica/.dotnet/tools"
 
 export EDITOR="micro"
 export VISUAL="micro"
