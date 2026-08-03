@@ -1,10 +1,3 @@
-Host *
-{{- if eq .chezmoi.os "linux" }}
-	IdentityAgent ~/.1password/agent.sock
-{{- else }}
-	IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
-{{- end }}
-
 Host git.alessiosarica.it
 	HostName gitlab.com
 	User git
@@ -16,12 +9,5 @@ Host git.unidea.org
 	HostName gitlab.com
 	user git
 	IdentityFile ~/.ssh/git.unidea.org.pub
-	IdentitiesOnly yes
-	PubkeyAuthentication yes
-
-Host atlas
-	HostName atlas.alessiosarica.it
-	User dokploy
-	IdentityFile ~/.ssh/atlas.alessiosarica.it.pub
 	IdentitiesOnly yes
 	PubkeyAuthentication yes
