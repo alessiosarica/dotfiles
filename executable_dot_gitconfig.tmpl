@@ -1,7 +1,7 @@
 [user]
 	name = Alessio Sarica
 	email = 39183476-AleCode.jar@users.noreply.gitlab.com
-	signingkey = {{ onepasswordRead "op://Personal/azgmql4ffz444j4ke63prvjfwu/public key" }}
+	signingkey = ~/.ssh/id_ed25519_sk_rk_yk_daily.pub
 [gpg]
 	format = ssh
 [commit]
@@ -11,12 +11,6 @@
 
 [includeIf "gitdir:~/Developer/UNIDEA/"]
 	path = ~/.gitconfig.unidea
-[gpg "ssh"]
-{{- if eq .chezmoi.os "linux" }}
-	program = "/opt/1Password/op-ssh-sign"
-{{- else }}
-	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
-{{- end }}
 
 [init]
 	defaultBranch = main
@@ -30,3 +24,5 @@
 	lg = log --oneline --graph --decorate --all
 [core]
 	autocrlf = input
+[gpg "ssh"]
+	program = /Users/a.sarica/.ssh/ssh_signer_wrapper.sh

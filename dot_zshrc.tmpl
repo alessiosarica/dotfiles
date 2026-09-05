@@ -77,54 +77,9 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-{{- if eq .chezmoi.os "linux" }}
-# Better ls
-alias ls='eza --icons'
-
-# Detailed listing
-alias ll='eza -lh --icons --git'
-
-# Detailed listing including hidden files
-alias la='eza -lah --icons --git'
-
-# Tree view
-alias tree='eza --tree --icons'
-
-# Reuse ls completions for eza
-compdef eza=ls
-
-# Better cat (bat on arch, batcat on Ubuntu)
-if command -v bat >/dev/null 2>&1; then
-	alias cat='bat'
-elif command -v batcat >/dev/null 2>&1; then
-	alias bat='batcat'
-	alias cat='batcat'
-fi
-
-alias grep='rg --color=auto'
-alias diff='diff --color=auto'
-alias df='df -h'
-
-if command -v bat >/dev/null 2>&1; then
-	export MANPAGER='bat -l man -p'
-elif command -v batcat >/dev/null 2>&1; then
-	export MANPAGER='batcat -l man -p'
-fi
-{{- else }}
 alias ls='ls --color'
 alias vim='nvim'
 alias c='clear'
-
-if command -v pnpm >/dev/null 2>&1; then
-	export PNPM_HOME="/Users/a.sarica/Library/pnpm"
-	case ":$PATH:" in
-	  *":$PNPM_HOME/bin:"*) ;;
-	  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
-	esac
-fi
-{{- end }}
-
-export PATH="$PATH:/Users/a.sarica/.dotnet/tools"
 
 export EDITOR="micro"
 export VISUAL="micro"

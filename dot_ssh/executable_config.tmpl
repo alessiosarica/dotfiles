@@ -1,13 +1,41 @@
-Host git.alessiosarica.it
+Host gitlab.com
 	HostName gitlab.com
 	User git
-	IdentityFile ~/.ssh/git.alessiosarica.it.pub
+	IdentityFile ~/.ssh/id_ed25519_sk_rk_yk_daily
+	IdentitiesOnly yes
+	PubkeyAuthentication yes
+
+Host gitlab.com
+	HostName gitlab.com
+	User git
+	IdentityFile ~/.ssh/id_ed25519_sk_rk_yk_backup
 	IdentitiesOnly yes
 	PubkeyAuthentication yes
 
 Host git.unidea.org
 	HostName gitlab.com
-	user git
-	IdentityFile ~/.ssh/git.unidea.org.pub
+	User git
+	IdentityFile ~/.ssh/id_ed25519_sk_rk_yk_daily
+	IdentitiesOnly yes
+	PubkeyAuthentication yes
+
+Host git.unidea.org
+	HostName gitlab.com
+	User git
+	IdentityFile ~/.ssh/id_ed25519_sk_rk_yk_backup
+	IdentitiesOnly yes
+	PubkeyAuthentication yes
+
+Host github.com
+	HostName gitlab.com
+	User git
+	IdentityFile ~/.ssh/id_ed25519_sk_rk_yk_daily
+	IdentitiesOnly yes
+	PubkeyAuthentication yes
+
+Host github.com
+	HostName gitlab.com
+	User git
+	IdentityFile ~/.ssh/id_ed25519_sk_rk_yk_backup
 	IdentitiesOnly yes
 	PubkeyAuthentication yes

@@ -1,0 +1,4 @@
+#!/bin/bash
+export SSH_ASKPASS="$HOME/.ssh/mac_askpass.sh"
+export SSH_ASKPASS_REQUIRE="force"
+exec /opt/homebrew/bin/ssh-keygen "$@"
